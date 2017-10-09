@@ -12,7 +12,7 @@ docker environment for fuzzing applications based on afl
 ### Example:
 
 ```shell
-docker run -it --cap-add=SYS_PTRACE -v $(pwd):/work/corpus skysider/afl_binutils
+docker run -it --cap-add=SYS_PTRACE -v $(pwd)/corpus/elf:/work/corpus skysider/afl_binutils
 ```
 
 ## Todo
