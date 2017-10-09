@@ -12,9 +12,15 @@ docker environment for fuzzing applications based on afl
 ### Example:
 
 ```shell
-docker run -it --cap-add=SYS_PTRACE -v $(pwd)/corpus/elf:/work/corpus skysider/afl_binutils
+docker run -it --cap-add=SYS_PTRACE -v $(pwd)/corpus/elf:/work/corpus --name binutils skysider/afl_binutils
 root@eb6f1d902221:/work# ls
 binutils-gdb binutils-gdb-asan corpus
+root@eb6f1d902221:/work# afl-cmin -i corpus -o corpus_cmin ./binutils-gdb/build/binutils/objdump @@
+root@eb6f1d902221:/work# afl-fuzz -i corpus_cmin -o out ./binutils-gdb/build/binutils/objdump @@
+
+
+docker exec -it binutils /bin/bash
+root@eb6f1d902221:/work# ./binutils-gdb-asan/build/binutils/objdump out/crashes/id:0000000
 ```
 - program in directory binutils-gdb is compiled with afl-gcc and afl-g++, which is used to fuzz
 - program in directory binutils-gdb-asan is compile with gcc and g++ with sanitizer flag, which is used to verify crash
