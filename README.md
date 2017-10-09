@@ -15,8 +15,8 @@ docker environment for fuzzing applications based on afl
 docker run -it --cap-add=SYS_PTRACE -v $(pwd)/corpus/elf:/work/corpus --name binutils skysider/afl_binutils
 root@eb6f1d902221:/work# ls
 binutils-gdb binutils-gdb-asan corpus
-root@eb6f1d902221:/work# afl-cmin -i corpus -o corpus_cmin ./binutils-gdb/build/binutils/objdump @@
-root@eb6f1d902221:/work# afl-fuzz -i corpus_cmin -o out ./binutils-gdb/build/binutils/objdump @@
+root@eb6f1d902221:/work# afl-cmin -i corpus -o corpus_cmin ./binutils-gdb/build/binutils/objdump -x @@
+root@eb6f1d902221:/work# afl-fuzz -i corpus_cmin -o out ./binutils-gdb/build/binutils/objdump -x @@
 
 
 docker exec -it binutils /bin/bash
