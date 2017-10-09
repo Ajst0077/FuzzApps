@@ -22,9 +22,9 @@ root@eb6f1d902221:/work# afl-fuzz -i corpus_cmin -o out ./binutils-gdb/build/bin
 docker exec -it binutils /bin/bash
 root@eb6f1d902221:/work# ./binutils-gdb-asan/build/binutils/objdump out/crashes/id:0000000
 ```
-- program in directory binutils-gdb is compiled with afl-gcc and afl-g++, which is used to fuzz
-- program in directory binutils-gdb-asan is compile with gcc and g++ with sanitizer flag, which is used to verify crash
-- file in directory corpus is used as input of afl-fuzz
+- programs in directory binutils-gdb are compiled with afl-gcc and afl-g++, which is used to fuzz
+- programs in directory binutils-gdb-asan are compiled with gcc and g++ with sanitizer flag, which is used to verify crash
+- files in directory corpus are used as input of afl-fuzz
 
 ## Todo
 
