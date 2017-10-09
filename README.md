@@ -20,7 +20,7 @@ root@eb6f1d902221:/work# afl-fuzz -i corpus_cmin -o out ./binutils-gdb/build/bin
 
 
 docker exec -it binutils /bin/bash
-root@eb6f1d902221:/work# ./binutils-gdb-asan/build/binutils/objdump out/crashes/id:0000000
+root@eb6f1d902221:/work# ./binutils-gdb-asan/build/binutils/objdump -x out/crashes/id:0000000
 ```
 - programs in directory binutils-gdb are compiled with afl-gcc and afl-g++, which are used for fuzzing
 - programs in directory binutils-gdb-asan are compiled with gcc and g++ with sanitizer flag, which are used to verify crash
