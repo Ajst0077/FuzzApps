@@ -1,4 +1,6 @@
-cd poppler && git pull origin
+#!/bin/bash
+cd poppler
+git pull origin
 cmake . \
     -DCMAKE_C_COMPILER=afl-gcc \
     -DCMAKE_CXX_COMPILER=afl-g++ \
