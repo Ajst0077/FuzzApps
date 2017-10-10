@@ -18,4 +18,4 @@ root@eb6f1d902221:/work# ./binutils-gdb-asan/binutils/objdump -x out/crashes/id:
 - programs in directory binutils-gdb-asan are compiled with gcc and g++ with sanitizer flag, which are used to verify crash
 - files in directory corpus are used as input of afl-fuzz
 - update-binutils.sh is a script which updates binutils-gdb from official repository and recompile binutils-gdb with afl compiler
-- update-binutils-address.sh does the same as above except that it works with binutils-gdb-address
+- update-binutils-address.sh does the same as above except that it works for binutils-gdb-address with gcc compiler
