@@ -25,7 +25,7 @@ WORKDIR /work
 
 RUN wget http://lcamtuf.coredump.cx/afl/releases/afl-latest.tgz && \
 	tar xzvf afl-latest.tgz && \
-	cd afl-* && make && make install && \
-	cd llvm_mode && make && \
+	cd afl-* && make && \
+	cd llvm_mode && make && cd .. && make install \
 	cp ../afl-clang-fast ../afl-clang-fast++ /usr/local/bin && \
 	cd ../../ && rm -rf afl-*
