@@ -14,7 +14,7 @@ RUN git clone --depth=1 https://source.isc.org/git/bind9.git && cd bind9 && \
     CC=afl-clang-fast CXX=afl-clang-fast++ ./configure \
         --enable-afl --prefix=/work/server \
         --without-openssl --disable-threads && \
-    AFL_USE_ASAN=1 make && make install
+    AFL_HARDEN=1 make && make install
 
 CMD ["/bin/bash"]
 
