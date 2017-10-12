@@ -19,5 +19,7 @@ RUN git clone --depth=1 https://source.isc.org/git/bind9.git && cd bind9 && \
 
 COPY named.conf test.zone /work/server/etc/
 
+COPY update-bind.sh /work/
+
 CMD ["/bin/bash"]
 
