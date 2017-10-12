@@ -1,0 +1,22 @@
+FROM skysider/afl_base:latest
+
+LABEL maintainer="junchaoluan@gmail.com"
+
+RUN apt update && \
+    apt install -y \
+    libgnutls-dev \
+    liburcu-dev  \
+    libedit-dev \
+    liblmdb-dev \
+    libcap-ng-dev \
+    libsystemd-dev \
+    libidn11-dev \
+    protobuf-c-compiler && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN git clone https://gitlab.labs.nic.cz/knot/knot-dns.git && \
+    cd knot-dns && autoreconf -i && CC=afl-clang-fast ./configure --prefix=/work/server/ && \
+    make check && cd tests-fuzz && \
+    wget https://gitlab.labs.nic.cz/knot/knot-dns/uploads/ce47a4b9ff729c9665b8ea1293392380/knot.dummy.conf
+
+CMD ["/bin/bash"]
