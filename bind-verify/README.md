@@ -5,7 +5,7 @@ docker environment for verifying bind dns server crashes
 ## Run
 ```
 docker run -it -v $(pwd)/dns_out:/work/out \
-    --name bind_verify --privileged skysider/afl_bind
+    --name bind_verify --privileged skysider/afl_bind_verify
 root@dfde8d99f428:/work# ./server/sbin/named -c ./server/etc/named.conf -g 
 ```
 ```
