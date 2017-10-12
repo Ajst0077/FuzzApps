@@ -16,5 +16,7 @@ RUN git clone --depth=1 https://source.isc.org/git/bind9.git && cd bind9 && \
         --without-openssl --disable-threads && \
     AFL_HARDEN=1 make && make install
 
+COPY named.conf test.zone /work/server/etc/
+
 CMD ["/bin/bash"]
 
