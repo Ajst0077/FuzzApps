@@ -11,11 +11,13 @@ RUN apt update && \
     libcap-ng-dev \
     libsystemd-dev \
     libidn11-dev \
-    protobuf-c-compiler && \
+    protobuf-c-compiler \
+    libfstrm-dev && \
     rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://gitlab.labs.nic.cz/knot/knot-dns.git && \
-    cd knot-dns && autoreconf -i && CC=afl-clang-fast ./configure --prefix=/work/server/ && \
+    cd knot-dns && git checkout 2.5 && autoreconf -if && \
+    CC=afl-clang-fast ./configure --disable-shared --prefix=/work/server/ && \
     make check && cd tests-fuzz && \
     wget https://gitlab.labs.nic.cz/knot/knot-dns/uploads/ce47a4b9ff729c9665b8ea1293392380/knot.dummy.conf
 
