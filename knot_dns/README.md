@@ -1,10 +1,10 @@
-# afl_knot
+# afl_knot_dns
 docker environment for fuzzing knot dns server with afl
 
 ## Run
 ```
 docker run -it --name knot-dns --privileged -v $(pwd)/corpus/dns:/work/corpus \
--v $(pwd)/dns_out:/work/out skysider/afl_knot
+-v $(pwd)/dns_out:/work/out skysider/afl_knot_dns
 
 root@1c49112bb61d:/work# cd knot-dns
 
