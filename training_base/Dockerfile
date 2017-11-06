@@ -10,7 +10,8 @@ RUN apt-get update -y && \
 	php-mysql \
 	php-curl \
 	supervisor \
-        net-tools && \
+        net-tools \
+        vim && \
 	rm -rf /var/lib/apt/lists/*
 
 CMD ["/bin/bash"]
