@@ -9,7 +9,7 @@ RUN apt-get update -y && \
 	libapache2-mod-php \
 	php-mysql \
 	php-curl \
-	supervisor 
+	supervisor \
         net-tools && \
 	rm -rf /var/lib/apt/lists/*
 
