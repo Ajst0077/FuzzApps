@@ -5,10 +5,10 @@ RUN apt-get update -y && \
 	mysql-server \
 	mysql-client \
 	apache2 \
-	php \
-	libapache2-mod-php \
-	php-mysql \
-	php-curl \
+	php5 \
+	libapache2-mod-php5 \
+	php5-mysql \
+	php5-curl \
 	supervisor \
         net-tools \
         vim && \
