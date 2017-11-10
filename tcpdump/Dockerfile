@@ -15,7 +15,7 @@ RUN git clone https://github.com/the-tcpdump-group/tcpdump.git && \
     CC=afl-gcc CXX=afl-g++ ./configure --disable-shared && \
     AFL_HARDEN=1 make && cd .. && autoconf && \
     CC=afl-gcc CXX=afl-g++ ./configure --disable-shared && \
-    AFL_HARDEN=1 make && cd ../tcpdump_asan/lipcap && autoconf && \
+    AFL_HARDEN=1 make && cd ../tcpdump_asan/libpcap && autoconf && \
     ./configure --disable-shared CFLAGS="-g -fsanitize=address" CXXFLAGS="-g -fsanitize=address" && \
     make && cd .. && autoconf && \
     ./configure --disable-shared CFLAGS="-g -fsanitize=address" CXXFLAGS="-g -fsanitize=address" && \
