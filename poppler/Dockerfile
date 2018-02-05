@@ -6,7 +6,7 @@ RUN apt-get -y update && \
     apt-get install -y \
     libopenjpeg-dev \
     libjpeg-dev \
-    libopenjpeg-2-7-dev \
+    libopenjp2-7-dev \
     libnss3-dev \
     liblcms2-dev \
     libcairo2-dev \
