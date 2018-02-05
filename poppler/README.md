@@ -7,6 +7,7 @@ a docker environment for fuzzing poppler
 docker run -it --name poppler -v $(pwd)/corpus/pdf:/work/corpus skysider/afl_poppler
 root@146ad565465:/work# ls
 corpus poppler poppler_address update-poppler.sh update-poppler-address.sh
+root@146ad565465:/work# ./update-poppler.sh && ./update-poppler-address.sh
 root@146ad565465:/work# afl-cmin -i corpus -o corpus_cmin ./poppler/utils/pdftops @@ 1
 root@146ad565465:/work# afl-fuzz -i corpus_cmin -o out ./poppler/utils/pdftops @@ 1
 
