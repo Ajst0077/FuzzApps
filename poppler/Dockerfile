@@ -16,17 +16,7 @@ RUN apt-get -y update && \
 WORKDIR /work 
 
 RUN git clone https://anongit.freedesktop.org/git/poppler/poppler.git && \
-    cp -r poppler poppler_address && cd poppler && \
-    cmake . \
-        -DCMAKE_C_COMPILER=afl-gcc \
-        -DCMAKE_CXX_COMPILER=afl-g++ \
-        -DCMAKE_C_FLAGS="-fPIC" \
-        -DCMAKE_CXX_FLAGS="-fPIC" \
-        -DBUILD_SHARED_LIBS=OFF && \ 
-    AFL_HARDEN=1 make && \
-    cd ../poppler_address/ && \
-    cmake . -DCMAKE_C_FLAGS="-g -fsanitize=address -fPIC" -DCMAKE_CXX_FLAGS="-g -fsanitize=address -fPIC" -DBUILD_SHARED_LIBS=OFF && \
-    make
+    cp -r poppler poppler_address && cd poppler 
 
 COPY update-poppler*.sh /work/
 
