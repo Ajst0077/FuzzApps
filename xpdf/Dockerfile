@@ -18,6 +18,6 @@ WORKDIR /work
 RUN wget https://xpdfreader-dl.s3.amazonaws.com/xpdf-4.00.tar.gz && \
     tar xzvf xpdf-4.00.tar.gz && cp -r xpdf-4.00 xpdf-4.00-address
 
-COPY update-poppler*.sh /work/
+COPY update-xpdf*.sh /work/
 
 ENTRYPOINT ["/bin/bash"]

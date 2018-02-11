@@ -6,7 +6,7 @@ cmake . \
     -DCMAKE_CXX_COMPILER=afl-g++ \
     -DCMAKE_C_FLAGS="-fPIC" \
     -DCMAKE_CXX_FLAGS="-fPIC" \
-    -DCMAKE_BUILD_TYPE=debugfull \
+    -DCMAKE_BUILD_TYPE=Debug \
     -DBUILD_SHARED_LIBS=OFF \
     -DENABLE_QT5=OFF \
     -DENABLE_LIBOPENJPEG=openjpeg2 \
