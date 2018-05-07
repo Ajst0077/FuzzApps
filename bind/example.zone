@@ -1,0 +1,13 @@
+$TTL 3D
+@               IN      SOA     aaaaaaaaaa.example. admin.aaaaaaaaaa.example. (
+                                199609203       ; Serial
+                                28800   ; Refresh
+                                7200    ; Retry
+                                604800  ; Expire
+                                86400)  ; Minimum TTL
+
+@                NS      ns1.aaaaaaaaaa.example.
+        
+aaaaaaaaaa.example.           IN      A       127.0.0.1
+ns1     IN       A     127.0.0.1
+www     IN        CNAME         aaaaaaaaaa.example.
