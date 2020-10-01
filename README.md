@@ -1,9 +1,9 @@
 # FuzzApps
-docker environment for fuzzing applications
+Docker environment for fuzzing applications
 
 ## supported applications
 
-| applications             | docker image                             |
+| Applications             | Docker image                             |
 | ------------------------ | ---------------------------------------- |
 | [binutils](binutils)     | [skysider/afl_binutils](https://hub.docker.com/r/skysider/afl_binutils/) |
 | [bind](bind)             | [skysider/afl_bind](https://hub.docker.com/r/skysider/afl_bind/)     |
@@ -17,4 +17,5 @@ See README.md in each application directory
 
 ## Todo
 
-add more applications
+Add more applications
+The new Update get will soon stay updated
